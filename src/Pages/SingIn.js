@@ -107,7 +107,7 @@ function SingIn({ LoginHandler }) {
         </InputContainer>
       </Form>
       <SignInBtn onClick={loginHandler}>SIGN IN</SignInBtn>
-      <CreateAccountBtn onClick={() => navigate("https://usertestapp-api.onrender.com/signup")}>
+      <CreateAccountBtn onClick={() => navigate("/signup")}>
         Create new account
       </CreateAccountBtn>
       {passwordStatus && (
