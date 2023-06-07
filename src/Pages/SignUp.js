@@ -30,7 +30,7 @@ function SignUp() {
 
   function signupHandler(event) {
     event.preventDefault();
-    fetch("http://localhost:8080/signup", {
+    fetch("https://usertestapp.onrender.com/signup", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
