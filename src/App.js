@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, useNavigate, sw } from "react-router-dom";
+import UsersPage from "./Pages/Users";
+import { useState } from "react";
+import SignUp from "./Pages/SignUp";
+import SingIn from "./Pages/SingIn";
 
 function App() {
+  const navigate = useNavigate();
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("status"));
+  const [userId, setUserId] = useState();
+  const [token, setToken] = useState();
+  console.log(`UserId: ${userId}, token: ${token}`);
+  console.log(isAuth);
+
+  function LoginHandler(id, token) {
+    setUserId(id);
+    setToken(token);
+    setIsAuth(true);
+    isAuth ? navigate("/users") : navigate("/auth/signup");
+  }
+
+  function toggleStatus() {
+    setIsAuth((prev) => !prev);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Routes>
+        <Route path="/" element={<SingIn LoginHandler={LoginHandler} />} />
+        <Route path="/signup" element={<SignUp />} />
+        {isAuth ? (
+          <Route
+            path="/users"
+            element={<UsersPage toggleStatus={toggleStatus} />}
+          />
+        ) : (
+          ""
+        )}
+      </Routes>
     </div>
   );
 }
-
 export default App;
