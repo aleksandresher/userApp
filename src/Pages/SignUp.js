@@ -30,7 +30,7 @@ function SignUp() {
 
   function signupHandler(event) {
     event.preventDefault();
-    fetch("/signup", {
+    fetch("https://usertestapp-api.onrender.com/signup", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -117,7 +117,7 @@ function SignUp() {
       <SignUpBtn type="button" onClick={signupHandler}>
         SIGN UP
       </SignUpBtn>
-      <LoginBtn onClick={() => navigate("/")}>Login</LoginBtn>
+      <LoginBtn onClick={() => navigate("https://usertestapp-api.onrender.com/")}>Login</LoginBtn>
 
       {messageStatus && (
         <MsgContainer>
