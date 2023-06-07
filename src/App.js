@@ -16,7 +16,7 @@ function App() {
     setUserId(id);
     setToken(token);
     setIsAuth(true);
-    isAuth ? navigate("/users") : navigate("/auth/signup");
+    isAuth ? navigate("https://usertestapp-api.onrender.com/users") : navigate("https://usertestapp-api.onrender.com/auth/signup");
   }
 
   function toggleStatus() {
@@ -26,11 +26,11 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<SingIn LoginHandler={LoginHandler} />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="https://usertestapp-api.onrender.com/" element={<SingIn LoginHandler={LoginHandler} />} />
+        <Route path="https://usertestapp-api.onrender.com/signup" element={<SignUp />} />
         {isAuth ? (
           <Route
-            path="/users"
+            path="https://usertestapp-api.onrender.com/users"
             element={<UsersPage toggleStatus={toggleStatus} />}
           />
         ) : (
