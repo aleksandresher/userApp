@@ -44,12 +44,12 @@ function UsersPage({ toggleStatus }) {
       localStorage.removeItem("userId");
       localStorage.removeItem("status");
 
-      navigate("/auth/signup");
+      navigate("https://usertestapp.onrender.com/auth/signup");
     }
   }, [click]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/users/getUsers", {
+    fetch("https://usertestapp.onrender.com/users/getUsers", {
       method: "GET",
     })
       .then((res) => {
@@ -72,7 +72,7 @@ function UsersPage({ toggleStatus }) {
   }, [click, forUpdate, selectedUsers]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/users/getUsers/" + userId, {})
+    fetch(https://usertestapp.onrender.com/users/getUsers/" + userId, {})
       .then((res) => {
         if (res.status !== 200) {
           throw new Error("Failed to fetch status");
@@ -88,7 +88,7 @@ function UsersPage({ toggleStatus }) {
   }, [click, selectedUsers]);
 
   // function deleteUser(userId) {
-  //   fetch("http://localhost:8080/users/getUsers/" + userId, {
+  //   fetch("https://usertestapp.onrender.com/users/getUsers/" + userId, {
   //     method: "DELETE",
   //   })
   //     .then((res) => {
@@ -110,12 +110,12 @@ function UsersPage({ toggleStatus }) {
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
     localStorage.removeItem("status");
-    navigate("/");
+    navigate("https://usertestapp.onrender.com/");
   }
 
   function deleteUser() {
     console.log("clicked");
-    fetch("http://localhost:8080/users/delete", {
+    fetch("https://usertestapp.onrender.com/users/delete", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -134,7 +134,7 @@ function UsersPage({ toggleStatus }) {
           localStorage.removeItem("token");
           localStorage.removeItem("userId");
           localStorage.removeItem("status");
-          navigate("/auth/signup");
+          navigate("https://usertestapp.onrender.com/auth/signup");
         }
         console.log(data);
       })
@@ -144,7 +144,7 @@ function UsersPage({ toggleStatus }) {
   }
 
   function BlockUser() {
-    fetch("http://localhost:8080/users/block", {
+    fetch("https://usertestapp.onrender.com/users/block", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -167,7 +167,7 @@ function UsersPage({ toggleStatus }) {
           localStorage.removeItem("token");
           localStorage.removeItem("userId");
           localStorage.removeItem("status");
-          navigate("/");
+          navigate("https://usertestapp.onrender.com/");
           // setForUpdate((prev) => !prev);
         }
       })
@@ -177,7 +177,7 @@ function UsersPage({ toggleStatus }) {
   }
 
   function UnblockUser() {
-    fetch("http://localhost:8080/users/unblock", {
+    fetch("https://usertestapp.onrender.com/users/unblock", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
