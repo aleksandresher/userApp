@@ -29,7 +29,7 @@ function SingIn({ LoginHandler }) {
 
   function loginHandler(event) {
     event.preventDefault();
-    fetch("https://usertestapp-api.onrender.com/", {
+    fetch("https://usertestapp-api.onrender.com", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
