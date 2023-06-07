@@ -29,7 +29,7 @@ function SingIn({ LoginHandler }) {
 
   function loginHandler(event) {
     event.preventDefault();
-    fetch("https://usertestapp.onrender.com/", {
+    fetch("/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -67,9 +67,9 @@ function SingIn({ LoginHandler }) {
         }
 
         if (resData.message === "welcome") {
-          navigate("https://usertestapp.onrender.com/users");
+          navigate("/users");
         } else {
-          navigate("https://usertestapp.onrender.com/");
+          navigate("/");
         }
       })
       .catch((err) => {
