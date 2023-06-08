@@ -49,7 +49,7 @@ function UsersPage({ toggleStatus }) {
   }, [click]);
 
   useEffect(() => {
-    fetch("https://usertestapp-api.onrender.com/users/getUsers", {
+    fetch("/users/getUsers", {
       method: "GET",
     })
       .then((res) => {
@@ -72,7 +72,7 @@ function UsersPage({ toggleStatus }) {
   }, [click, forUpdate, selectedUsers]);
 
   useEffect(() => {
-    fetch("https://usertestapp-api.onrender.com/users/getUsers/" + userId, {})
+    fetch("/users/getUsers/" + userId, {})
       .then((res) => {
         if (res.status !== 200) {
           throw new Error("Failed to fetch status");
@@ -88,7 +88,7 @@ function UsersPage({ toggleStatus }) {
   }, [click, selectedUsers]);
 
   // function deleteUser(userId) {
-  //   fetch("https://usertestapp-api.onrender.com/users/getUsers/" + userId, {
+  //   fetch("/users/getUsers/" + userId, {
   //     method: "DELETE",
   //   })
   //     .then((res) => {
@@ -110,12 +110,12 @@ function UsersPage({ toggleStatus }) {
     localStorage.removeItem("token");
     localStorage.removeItem("userId");
     localStorage.removeItem("status");
-    navigate("https://usertestapp-api.onrender.com/");
+    navigate("/");
   }
 
   function deleteUser() {
     console.log("clicked");
-    fetch("https://usertestapp-api.onrender.com/users/delete", {
+    fetch("/users/delete", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -134,7 +134,7 @@ function UsersPage({ toggleStatus }) {
           localStorage.removeItem("token");
           localStorage.removeItem("userId");
           localStorage.removeItem("status");
-          navigate("https://usertestapp-api.onrender.com/auth/signup");
+          navigate("/auth/signup");
         }
         console.log(data);
       })
@@ -144,7 +144,7 @@ function UsersPage({ toggleStatus }) {
   }
 
   function BlockUser() {
-    fetch("https://usertestapp-api.onrender.com/users/block", {
+    fetch("/users/block", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -167,7 +167,7 @@ function UsersPage({ toggleStatus }) {
           localStorage.removeItem("token");
           localStorage.removeItem("userId");
           localStorage.removeItem("status");
-          navigate("https://usertestapp-api.onrender.com/");
+          navigate("/");
           // setForUpdate((prev) => !prev);
         }
       })
@@ -177,7 +177,7 @@ function UsersPage({ toggleStatus }) {
   }
 
   function UnblockUser() {
-    fetch("https://usertestapp-api.onrender.com/users/unblock", {
+    fetch("/users/unblock", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
