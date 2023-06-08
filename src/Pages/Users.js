@@ -44,7 +44,7 @@ function UsersPage({ toggleStatus }) {
       localStorage.removeItem("userId");
       localStorage.removeItem("status");
 
-      navigate("https://usertestapp-api.onrender.com/auth/signup");
+      navigate("/auth/signup");
     }
   }, [click]);
 
