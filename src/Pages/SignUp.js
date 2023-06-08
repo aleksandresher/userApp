@@ -34,7 +34,7 @@ function SignUp() {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`
+      
       },
       body: JSON.stringify({
         email: formData.email,
