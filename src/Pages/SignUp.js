@@ -117,7 +117,7 @@ function SignUp() {
       <SignUpBtn type="button" onClick={signupHandler}>
         SIGN UP
       </SignUpBtn>
-      <LoginBtn onClick={() => navigate("https://usertestapp-api.onrender.com/")}>Login</LoginBtn>
+      <LoginBtn onClick={() => navigate("/")}>Login</LoginBtn>
 
       {messageStatus && (
         <MsgContainer>
