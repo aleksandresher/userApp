@@ -56,7 +56,7 @@ function SingIn({ LoginHandler }) {
         setUserId(resData.userId);
         localStorage.setItem("token", resData.token);
         localStorage.setItem("userId", resData.userId);
-        LoginHandler(resData.userId, resData.token);
+       
         localStorage.setItem("status", true);
         if (resData.message === "A user with this email could not be found.") {
           setEmailStatus(true);
