@@ -113,9 +113,9 @@ function SingIn({ LoginHandler }) {
 
       </Form>
       <SignInBtn onClick={loginHandler}>SIGN IN</SignInBtn>
-<SpinnerContainer>
+{loader?<SpinnerContainer>
       <SpinnerDiv/>
-    </SpinnerContainer>
+    </SpinnerContainer>: ""}
       <CreateAccountBtn onClick={() => navigate("/signup")}>
         Create new account
       </CreateAccountBtn>
