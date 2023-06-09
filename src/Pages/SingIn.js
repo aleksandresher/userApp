@@ -12,6 +12,7 @@ function SingIn({ LoginHandler }) {
     password: "",
     email: "",
   });
+  const [loader, setLoader] = useState(false);
   const [isAuth, setIsAuth] = useState(false);
   const [token, setToken] = useState(null);
   const [userId, setUserId] = useState(null);
@@ -30,6 +31,7 @@ function SingIn({ LoginHandler }) {
 
   function loginHandler(event) {
     event.preventDefault();
+    setLoader(true);
     fetch("https://usertestapp-api.onrender.com/", {
       method: "POST",
       headers: {
@@ -52,6 +54,7 @@ function SingIn({ LoginHandler }) {
       })
       .then((resData) => {
         setAuthLoading(false);
+      setLoader(false);
         setIsAuth(true);
         setToken(resData.token);
         setUserId(resData.userId);
@@ -78,6 +81,7 @@ function SingIn({ LoginHandler }) {
         setIsAuth(false);
         setAuthLoading(false);
         setError(err);
+       setLoader(false);
       });
   }
 
