@@ -30,7 +30,7 @@ function SignUp() {
 
   function signupHandler(event) {
     event.preventDefault();
-    fetch("/signup", {
+    fetch("https://usertestapp-api.onrender.com/signup", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
