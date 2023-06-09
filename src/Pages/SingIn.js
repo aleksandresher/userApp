@@ -67,7 +67,7 @@ function SingIn({ LoginHandler }) {
         }
 
         if (resData.message === "welcome") {
-          navigate("https://usertestapp-api.onrender.com/users");
+          navigate("/users");
         } else {
           navigate("https://usertestapp-api.onrender.com/");
         }
