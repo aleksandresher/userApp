@@ -49,7 +49,7 @@ function UsersPage({ toggleStatus }) {
   }, [click]);
 
   useEffect(() => {
-    fetch("/users/getUsers", {
+    fetch("https://usertestapp-api.onrender.com/users/getUsers", {
       method: "GET",
     })
       .then((res) => {
@@ -72,7 +72,7 @@ function UsersPage({ toggleStatus }) {
   }, [click, forUpdate, selectedUsers]);
 
   useEffect(() => {
-    fetch("/users/getUsers/" + userId, {})
+    fetch("https://usertestapp-api.onrender.com/users/getUsers/" + userId, {})
       .then((res) => {
         if (res.status !== 200) {
           throw new Error("Failed to fetch status");
@@ -88,7 +88,7 @@ function UsersPage({ toggleStatus }) {
   }, [click, selectedUsers]);
 
   // function deleteUser(userId) {
-  //   fetch("/users/getUsers/" + userId, {
+  //   fetch("https://usertestapp-api.onrender.com/users/getUsers/" + userId, {
   //     method: "DELETE",
   //   })
   //     .then((res) => {
@@ -115,7 +115,7 @@ function UsersPage({ toggleStatus }) {
 
   function deleteUser() {
     console.log("clicked");
-    fetch("/users/delete", {
+    fetch("https://usertestapp-api.onrender.com/users/delete", {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
@@ -144,7 +144,7 @@ function UsersPage({ toggleStatus }) {
   }
 
   function BlockUser() {
-    fetch("/users/block", {
+    fetch("https://usertestapp-api.onrender.com/users/block", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -177,7 +177,7 @@ function UsersPage({ toggleStatus }) {
   }
 
   function UnblockUser() {
-    fetch("/users/unblock", {
+    fetch("https://usertestapp-api.onrender.com/users/unblock", {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
