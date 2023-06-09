@@ -105,11 +105,12 @@ function SingIn({ LoginHandler }) {
             onChange={handleInputChange}
           />
         </InputContainer>
+
+      </Form>
+      <SignInBtn onClick={loginHandler}>SIGN IN</SignInBtn>
 <SpinnerContainer>
       <SpinnerDiv/>
     </SpinnerContainer>
-      </Form>
-      <SignInBtn onClick={loginHandler}>SIGN IN</SignInBtn>
       <CreateAccountBtn onClick={() => navigate("/signup")}>
         Create new account
       </CreateAccountBtn>
