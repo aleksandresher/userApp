@@ -121,7 +121,7 @@ function SignUp() {
       </Form>
       <SignUpBtn type="button" onClick={signupHandler}>
         SIGN UP
-      </SignUpBtn
+      </SignUpBtn>
 {loader && (
   <SpinnerContainer>
       <SpinnerDiv/>
