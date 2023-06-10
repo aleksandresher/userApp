@@ -5,6 +5,7 @@ import { keyframes } from "styled-components";
 
 function SignUp() {
   const [name, setName] = useState();
+  const [loader, setLoader] = useState(false);
   const [messageStatus, setMessageStatus] = useState(false);
   const [passwordStatus, setPasswordStatus] = useState(false);
   const [emailStatus, setEmailStatus] = useState(false);
@@ -118,7 +119,10 @@ function SignUp() {
       </Form>
       <SignUpBtn type="button" onClick={signupHandler}>
         SIGN UP
-      </SignUpBtn>
+      </SignUpBtn
+{loader?<SpinnerContainer>
+      <SpinnerDiv/>
+    </SpinnerContainer>: ""}
       <LoginBtn onClick={() => navigate("/")}>Login</LoginBtn>
 
       {messageStatus && (
