@@ -122,9 +122,10 @@ function SignUp() {
       <SignUpBtn type="button" onClick={signupHandler}>
         SIGN UP
       </SignUpBtn
-{loader?<SpinnerContainer>
+{loader && (
+  <SpinnerContainer>
       <SpinnerDiv/>
-    </SpinnerContainer>: ""}
+    </SpinnerContainer>)}
       <LoginBtn onClick={() => navigate("/")}>Login</LoginBtn>
 
       {messageStatus && (
