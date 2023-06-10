@@ -32,6 +32,7 @@ function SignUp() {
 
   function signupHandler(event) {
     event.preventDefault();
+    setLoader(true);
     fetch("https://usertestapp-api.onrender.com/signup", {
       method: "PUT",
       headers: {
@@ -76,6 +77,7 @@ function SignUp() {
       })
       .catch((err) => {
         console.log(err);
+      setLoader(false);
       });
   }
 
