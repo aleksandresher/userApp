@@ -8,8 +8,6 @@ function UsersPage({ toggleStatus }) {
   const [data, setData] = useState();
   const [user, setUser] = useState();
   const [allUser, setAllUser] = useState([]);
-  console.log(` user: ${allUser}`);
-  console.log(data);
   const [click, setClick] = useState(false);
   const [ids, setIds] = useState();
   const userId = localStorage.getItem("userId");
@@ -87,24 +85,7 @@ function UsersPage({ toggleStatus }) {
       });
   }, [click, selectedUsers]);
 
-  // function deleteUser(userId) {
-  //   fetch("https://usertestapp-api.onrender.com/users/getUsers/" + userId, {
-  //     method: "DELETE",
-  //   })
-  //     .then((res) => {
-  //       if (res.status !== 200 && res.status !== 201) {
-  //         throw new Error("Deleting a user failed!");
-  //       }
-  //       return res.json();
-  //     })
-  //     .then((resData) => {
-  //       console.log(resData);
-  //       setClick((prev) => !prev);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // }
+
 
   function logoutHandler() {
     localStorage.removeItem("token");
@@ -136,7 +117,7 @@ function UsersPage({ toggleStatus }) {
           localStorage.removeItem("status");
           navigate("/auth/signup");
         }
-        console.log(data);
+        
       })
       .catch((error) => {
         console.error(error);
@@ -159,7 +140,6 @@ function UsersPage({ toggleStatus }) {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         setSelectedUsers([]);
         setSelectAll(false);
         setClick((prev) => !prev);
@@ -192,7 +172,6 @@ function UsersPage({ toggleStatus }) {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         setSelectedUsers([]);
         setSelectAll(false);
         // setForUpdate((prev) => !prev);
