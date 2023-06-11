@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { keyframes } from "styled-components";
 
-function SingIn({ LoginHandler }) {
+function SingIn() {
   const navigate = useNavigate();
   const [data, setData] = useState();
   const [password, setPassword] = useState();
