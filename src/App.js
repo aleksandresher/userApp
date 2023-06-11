@@ -6,7 +6,7 @@ import SingIn from "./Pages/SingIn";
 
 function App() {
   const navigate = useNavigate();
-//   const [isAuth, setIsAuth] = useState(localStorage.getItem("status"));
+  const [isAuth, setIsAuth] = useState(localStorage.getItem("status"));
 //   const [userId, setUserId] = useState();
 //   const [token, setToken] = useState();
 //   console.log(`UserId: ${userId}, token: ${token}`);
@@ -26,7 +26,7 @@ function App() {
   return (
     <div>
       <Routes>
-        <Route path="/" element={<SingIn LoginHandler={LoginHandler} />} />
+        <Route path="/" element={<SingIn />} />
         <Route path="/signup" element={<SignUp />} />
         {isAuth ? (
           <Route
