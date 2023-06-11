@@ -6,18 +6,18 @@ import SingIn from "./Pages/SingIn";
 
 function App() {
   const navigate = useNavigate();
-  const [isAuth, setIsAuth] = useState(localStorage.getItem("status"));
-  const [userId, setUserId] = useState();
-  const [token, setToken] = useState();
-  console.log(`UserId: ${userId}, token: ${token}`);
-  console.log(isAuth);
+//   const [isAuth, setIsAuth] = useState(localStorage.getItem("status"));
+//   const [userId, setUserId] = useState();
+//   const [token, setToken] = useState();
+//   console.log(`UserId: ${userId}, token: ${token}`);
+//   console.log(isAuth);
 
-  function LoginHandler(id, token) {
-    setUserId(id);
-    setToken(token);
-    setIsAuth(true);
-    isAuth ? navigate("/users") : navigate("/auth/signup");
-  }
+//   function LoginHandler(id, token) {
+//     setUserId(id);
+//     setToken(token);
+//     setIsAuth(true);
+//     isAuth ? navigate("/users") : navigate("/auth/signup");
+//   }
 
   function toggleStatus() {
     setIsAuth((prev) => !prev);
